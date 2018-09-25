@@ -8,6 +8,7 @@ RUN apt-get update &&\
 COPY entrypoint.sh /opt/entrypoint.sh
 
 VOLUME /secret
+ENV PRIVATE ""
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["ssh-agent", "-a", "/secret/ssh-agent.sock", "-D"]
