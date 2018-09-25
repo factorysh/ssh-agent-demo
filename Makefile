@@ -2,10 +2,13 @@ image:
 	docker build -t ssh-agent .
 
 demo:
-	ssh-keygen -t rsa -f demo -C "Docker demo" -N muhahahahah
+	ssh-keygen -t rsa -f demo -C "Docker demo" -q -N ""
 
-run:
-	docker run -ti --rm --env-file .env ssh-agent bash
+run: .env
+	docker run -ti --rm --env-file .env ssh-agent
 
 .env:
 	./write_env.rb
+
+clean:
+	rm -rf demo demo.pub
