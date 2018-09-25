@@ -4,7 +4,9 @@ echo "Hello"
 
 echo $PRIVATE | sed -e "s/\\n/\n/g" > /run/private
 chmod 400 /run/private
+rm -f /secret/ssh-agent.sock
 ssh-agent -a /secret/ssh-agent.sock
+chmod 700 /secret/ssh-agent.sock
 
 expect << EOF
   spawn ssh-add /run/private
