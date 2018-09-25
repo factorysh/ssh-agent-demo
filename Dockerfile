@@ -10,6 +10,7 @@ COPY entrypoint.sh /opt/entrypoint.sh
 
 VOLUME /secret
 ENV PRIVATE ""
+ENV SSH_AUTH_SOCK /secret/ssh-agent.sock
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["bash"]
