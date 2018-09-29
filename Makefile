@@ -11,4 +11,4 @@ run: .env
 	./write_env.py
 
 clean:
-	rm -rf demo demo.pub
+	rm -rf demo demo.pub .env
