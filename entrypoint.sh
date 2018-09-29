@@ -5,8 +5,8 @@ echo "Hello"
 echo $PRIVATE | sed -e "s/\\n/\n/g" > /run/private
 chmod 400 /run/private
 rm -f /secret/ssh-agent.sock
+# Can't use daemon mode, "-D &" can use "wait"
 ssh-agent -a /secret/ssh-agent.sock -D &
-#chmod 700 /secret/ssh-agent.sock
 
 expect << EOF
   spawn ssh-add /run/private
