@@ -1,0 +1,16 @@
+---
+
+version: "3"
+services:
+    agent:
+        image: ssh-agent
+        environment:
+            PRIVATE: ${PRIVATE}
+        volumes:
+            - ./secret:/secret
+    client:
+        image: ssh-agent
+        entrypoint: []
+        volumes:
+            - ./secret:/secret
+
