@@ -11,6 +11,9 @@ services:
     client:
         image: ssh-agent
         entrypoint: []
+        links:
+            - agent
         volumes:
             - ./secret:/secret
+        command: ssh-add -l
 
