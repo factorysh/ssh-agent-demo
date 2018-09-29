@@ -8,7 +8,7 @@ run: .env
 	docker run -ti --rm --env-file .env ssh-agent
 
 .env:
-	./write_env.rb
+	./write_env.py
 
 clean:
 	rm -rf demo demo.pub
