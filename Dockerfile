@@ -13,4 +13,4 @@ ENV PRIVATE ""
 ENV SSH_AUTH_SOCK /secret/ssh-agent.sock
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
-CMD ["cat"]
+CMD ["agent"]
