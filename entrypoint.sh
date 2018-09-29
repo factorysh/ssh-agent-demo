@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "Hello"
-
 echo $PRIVATE | sed -e "s/\\n/\n/g" > /run/private
 chmod 400 /run/private
 rm -f /secret/ssh-agent.sock
