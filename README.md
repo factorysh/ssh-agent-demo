@@ -1,6 +1,6 @@
-# ssh-add docker demo
+# ssh-agent docker demo
 
-One service for the agent, client use the agent.
+One service for the agent, clients use the agent.
 
 ## Big picture
 
